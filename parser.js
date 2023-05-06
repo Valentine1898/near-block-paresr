@@ -20,7 +20,7 @@ async function main() {
     const status = await provider.status();
 
     console.log(status)
-    const lastBlockHeight = 90087856;
+    const lastBlockHeight = status.sync_info.latest_block_height;
 
 
     var epoch = undefined;
