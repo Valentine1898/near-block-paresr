@@ -1,0 +1,1 @@
+{"jsonrpc":"2.0","error":{"name":"HANDLER_ERROR","cause":{"name":"VALIDATOR_INFO_UNAVAILABLE"},"code":-32000,"message":"Server error","data":"Validator info unavailable"},"id":"dontcare"}
