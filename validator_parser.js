@@ -35,6 +35,9 @@ async function main() {
 
             console.log(epochId)
 
+            if (blockID <86025094 || blockID > 90301895 )
+                continue
+
             if (block === "first" ) {
                 try {
 
@@ -44,7 +47,7 @@ async function main() {
                     var raw = JSON.stringify({
                         "jsonrpc": "2.0",
                         "id": "dontcare",
-                        "method": "validators",
+                        "method": "EXPERIMENTAL_validators_ordered",
                         "params": [
                             epochId
                         ]
@@ -60,8 +63,8 @@ async function main() {
                     fetch("https://archival-rpc.mainnet.near.org", requestOptions)
                         .then(response => response.text())
                         .then(result =>  {
-                            console.log(result);
-                            fs.writeFileSync(`validators/validators-${epochId}.json`, result);
+
+                            fs.writeFileSync(`EXPERIMENTAL_validators_ordered/${blockID}-${epochId}.json`, result);
 
                         })
                         .catch(error => console.log('error', error));
